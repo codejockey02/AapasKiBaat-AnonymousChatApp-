@@ -1,7 +1,6 @@
 $(function () {
     //make connection
-    var con = `https://aapaskibaat.herokuapp.com:${process.env.PORT}`;
-    const socket = io.connect(con);
+    const socket = io.connect('https://aapaskibaat.herokuapp.com/');
 
     //buttons and inputs
     var message = $("#message")
