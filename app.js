@@ -1,14 +1,15 @@
 const express = require('express');
 const app = express();
-
+const env = require('./env');
 app.set('view engie', 'ejs');
 app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
     res.render('index.ejs');
 });
-
-server = app.listen(3000);
+env();
+server = app.listen(process.env.PORT);
+console.log('Working on ' + process.env.PORT);
 const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
