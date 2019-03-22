@@ -1,6 +1,6 @@
 $(function () {
     //make connection
-    const socket = io.connect(window.location.hostname);
+    const socket = io();
 
     //buttons and inputs
     var message = $("#message")

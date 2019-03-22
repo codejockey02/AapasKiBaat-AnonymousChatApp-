@@ -8,8 +8,10 @@ app.get('/', async (req, res) => {
     res.render('index.ejs');
 });
 env();
-server = app.listen(process.env.PORT);
-console.log('Working on ' + process.env.PORT);
+const port = process.env.PORT;
+
+server = app.listen(port);
+console.log('Working on ' + port);
 const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
