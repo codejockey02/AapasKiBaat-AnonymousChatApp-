@@ -1,0 +1,23 @@
+language: node_js
+node_js: node
+sudo: required
+services:
+  - docker
+
+before-install:
+  - docker build -t priyeshs2/sample .
+
+deploy:
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: "docker-sample"
+  env: "Docker-env"
+  bucket-name: "elasticbeanstalk-ap-south-1-980064312340"
+  path: "docker-sample"
+
+on:
+  branch: master
+
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key:
+  secure: "$AWS_SECRET_KEY"
