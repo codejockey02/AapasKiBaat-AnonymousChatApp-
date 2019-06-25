@@ -9,7 +9,7 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: ap-south-1
+  region: "ap-south-1"
   app: "docker-sample"
   env: "Docker-env"
   access_key_id: 
@@ -20,3 +20,4 @@ deploy:
   path: "docker-sample"
   on:
     branch: master
+  skip_cleanup: true
