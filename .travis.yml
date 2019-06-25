@@ -4,10 +4,8 @@ sudo: required
 services:
   - docker
 
-before-install:
-  - docker build -t priyeshs2/sample .
-
 script:
+  - docker build -t priyeshs2/sample .
   - docker run -p 80:3000 priyeshs2/sample 
 
 deploy:
