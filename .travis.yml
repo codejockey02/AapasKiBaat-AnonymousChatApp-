@@ -8,7 +8,7 @@ before-install:
   - docker build -t priyeshs2/sample .
 
 script:
-  - docker run -p 80:3000 --name priyeshs2/sample 
+  - docker run -p 80:3000 priyeshs2/sample 
 
 deploy:
   provider: elasticbeanstalk
