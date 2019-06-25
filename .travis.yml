@@ -12,10 +12,11 @@ deploy:
   region: ap-south-1
   app: "docker-sample"
   env: "Docker-env"
+  access_key_id: 
+    secure: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
   bucket-name: "elasticbeanstalk-ap-south-1-980064312340"
   path: "docker-sample"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
